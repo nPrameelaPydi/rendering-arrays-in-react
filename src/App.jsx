@@ -67,12 +67,20 @@ function App() {
     ],
   });
 
-  function LearnersDataDisplay({ name, bio, scores }) {}
-
   return (
-    <>
-      <Learner />
-    </>
+    <div className="container">
+      <h1>Learners List</h1>
+      {learnerData.learners.map((learner, index) => {
+        return (
+          <Learner
+            key={index}
+            name={learner.name}
+            bio={learner.bio}
+            scores={learner.scores}
+          />
+        );
+      })}
+    </div>
   );
 }
 
